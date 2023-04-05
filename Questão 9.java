@@ -32,3 +32,30 @@ caracteres (por exemplo, "ABC" pode gerar "ABC", "ACB", "BAC",
 	}
 
 }
+import java.util.Arrays;
+
+public class PermutationGenerator {
+    
+    public static void main(String[] args) {
+        String input = "ABC";
+        generatePermutations(input.toCharArray(), 0);
+    }
+
+    private static void generatePermutations(char[] arr, int index) {
+        if (index == arr.length - 1) {
+            System.out.println(String.valueOf(arr));
+        } else {
+            for (int i = index; i < arr.length; i++) {
+                swap(arr, index, i);
+                generatePermutations(arr, index + 1);
+                swap(arr, index, i);
+            }
+        }
+    }
+
+    private static void swap(char[] arr, int i, int j) {
+        char temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
