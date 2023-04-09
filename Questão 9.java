@@ -4,13 +4,13 @@ public class Questão9 {
 	/* 9) Faça um programa para gerar todas as permutações de um conjunto de
 	caracteres (por exemplo, "ABC" pode gerar "ABC", "ACB", "BAC",
 	"BCA", "CAB" e "CBA"). */
-	   public static void main(String[] args) {
-		   Scanner leitor = new Scanner(System.in);
-		   System.out.println("Escreva um Conjunto de 3 caracteres: ");
-	       String conjunto = leitor.next();
-	       gerarPermutações(conjunto.toCharArray(), 0);
-	       leitor.close();
-	   }
+	public static void main(String[] args) {
+		Scanner leitor = new Scanner(System.in);
+		System.out.println("Escreva um Conjunto de 3 caracteres: ");
+		String conjunto = leitor.next();
+		gerarPermutações(conjunto.toCharArray(), 0);
+		leitor.close();
+	}
 
 	   private static void gerarPermutações(char[] conjunto, int index) {
 	       if (index == conjunto.length - 1) {
