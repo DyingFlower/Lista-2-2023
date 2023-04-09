@@ -4,7 +4,7 @@ public class Questão9 {
 	/* 9) Faça um programa para gerar todas as permutações de um conjunto de
 	caracteres (por exemplo, "ABC" pode gerar "ABC", "ACB", "BAC",
 	"BCA", "CAB" e "CBA"). */
-	   public static void main(String[] args) {// precisei de ajuda do chat gpt mas entendi o código
+	   public static void main(String[] args) {
 		   Scanner leitor = new Scanner(System.in);
 		   System.out.println("Escreva um Conjunto de 3 caracteres: ");
 	       String conjunto = leitor.next();
