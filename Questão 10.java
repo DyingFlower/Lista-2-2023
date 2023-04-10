@@ -57,16 +57,86 @@ a)              b)            C)          D)            E)
 		}
 	}
 	public static void configb(int cl) {
-		int matriz[][] = new int[cl][cl];
+		ArrayList<int[]> vetores= new ArrayList<>();
+		for(int i = 0;i<cl;i++) {
+			if(i==cl/2+0.5 || i==cl/2) {
+				int vetor[]= new int[cl];
+				for(int j=0;j<vetor.length;j++) {
+					vetor[j]=2;
+				}
+				vetores.add(vetor);
+			}
+			else if(i%2==0) {
+				int vetor[]= new int[cl];
+				int aux = cl-1;
+				for(int j=0;j<vetor.length;j++) {
+					vetor[j]=aux;
+					aux--;
+				}
+				vetores.add(vetor);
+			}
+			else if(i%2!=0) {
+				int vetor[]= new int[cl];
+				for(int j=0;j<vetor.length;j++) {
+					vetor[j]=j;
+				}
+				vetores.add(vetor);
+			}
+		}
+		for(int i=0;i<cl;i++) {
+			int vetor[] = vetores.get(i);
+			 for (int j = 0; j < vetor.length; j++) {
+				 if(vetor[j]==2) {
+					 System.out.print("@ ");
+				 }
+				 else
+				 System.out.print(vetor[j] + " ");
+	         }
+			 System.out.println();
+		}
 		
 	}
 	public static void configc(int cl) {
-		int matriz[][] = new int[cl][cl];
+		ArrayList<int[]> vetores= new ArrayList<>();
+		int aux2=cl-2; // diminui a ultima coluna
+		for(int i = 0;i<cl;i++) {
+			int vetor[]= new int[cl];
+			int aux=cl-1; // diminui a ultima linha
+			for(int j=0;j<vetor.length;j++) {
+				if(i==0) {
+					vetor[j]=j;
+				}
+				else if(i==cl-1) {
+					vetor[j]=aux;
+					aux--;
+				}
+				else if(i>0 && i<cl-1) {
+					if(j==0)
+						vetor[j]=i;
+					else if(j==vetor.length-1) {
+						vetor[j]=aux2;
+						aux2--;
+					}
+					else
+						vetor[j]=45; // numero auxiliar :)
+				}
+			}
+			vetores.add(vetor);
+		}
+		for(int i=0;i<cl;i++) {
+			int vetor[] = vetores.get(i);
+			 for (int j = 0; j < vetor.length; j++) {
+				 if(vetor[j]==45) {// motivo do numero auxiliar
+					 System.out.print("* ");
+				 }
+				 else
+					 System.out.print(vetor[j] + " ");
+	         }
+			 System.out.println();
+		}
 	}
 	public static void configd(int cl) {
-		int matriz[][] = new int[cl][cl];
 	}
 	public static void confige(int cl) {
-		int matriz[][] = new int[cl][cl];
 	}
 }
